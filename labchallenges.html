@@ -36,96 +36,160 @@
 
             <!-- Lab Challenge 1 -->
             <div class="lab-card">
-                <h3>🧩 Lab 1: Network Traffic Analysis</h3>
+                <h3>🧩 Lab 1:Examine TCP/IP and OSI Models in Action</h3>
                 <div class="lab-detail">
                     <strong>Problem:</strong>
-                    <p>Analyze suspicious network packets to identify potential security threats and extract sensitive information from captured traffic.</p>
+                    <p>Use Cisco Packet Tracer to simulate and analyze how data moves through the TCP/IP and OSI layers by generating and examining HTTP, DNS, ARP, and TCP traffic events.</p>
                 </div>
                 <div class="lab-detail">
                     <strong>Tools Used:</strong>
-                    <p>Wireshark, tcpdump, Linux command line</p>
+                    <p>Cisco Packet Tracer (Simulation Mode)</p>
                 </div>
                 <div class="lab-detail">
                     <strong>Approach:</strong>
                     <p>
-                        Captured network traffic using tcpdump and imported the PCAP file into Wireshark for detailed analysis. 
-                        Applied filters to isolate HTTP traffic and examined packet headers for anomalies. Identified unencrypted 
-                        credentials being transmitted over the network and traced the source and destination IP addresses. 
-                        Reconstructed TCP streams to view complete conversations between hosts.
+                        Loaded a pre-configured network topology in Packet Tracer and switched from Realtime to Simulation mode. Filtered events to view only HTTP traffic and generated web requests from a client to www.osi.local. Observed encapsulation and decapsulation processes across Layers 2–7 as data traveled between client and server.
+
+                        In the second part, expanded the view to include DNS, ARP, and TCP events, tracking domain resolution, MAC address discovery, and the TCP three-way handshake. Examined each PDU’s layer details to understand how each protocol contributes to reliable communication and session management.
                     </p>
                 </div>
                 <div class="lab-detail">
                     <strong>Key Lessons:</strong>
                     <p>
-                        Understanding network visibility is crucial for detecting potential intrusions. Learned the importance of 
-                        protocol analysis and how attackers can exploit unencrypted communications. This lab reinforced the need 
-                        for encryption (HTTPS, VPNs) in protecting sensitive data transmission.
+                        This lab reinforced the relationship between the OSI and TCP/IP models and how they cooperate during network transmission. Learned how encapsulation and decapsulation work, how DNS resolves names, how ARP maps hardware addresses, and how TCP establishes and terminates connections. The simulation provided clear visualization of protocol interactions, strengthening my grasp of layered communication and troubleshooting fundamentals.
                     </p>
                 </div>
+                <!-- Add this at the top of each labchallenges -->
+                    <div class="lab-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h3 style="color: white;">📥 Download Complete Lab Documentation</h3>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            Get the full PDF with detailed methodologies, screenshots, and lessons learned from this lab challenge.
+                        </p>
+                        <a href="assets/documents~/Lab_Report_1.pdf" class="btn btn-secondary" download style="background: white; color: #667eea;">
+                            Download PDF
+                        </a>
+                    </div>
             </div>
-
             <!-- Lab Challenge 2 -->
             <div class="lab-card">
-                <h3>🧩 Lab 2: HTTP Fundamentals & Web Request Manipulation</h3>
+                <h3>🧩 Lab 2:Using Wireshark to View Network Traffic</h3>
                 <div class="lab-detail">
                     <strong>Problem:</strong>
-                    <p>Understand HTTP request/response cycles and learn to manipulate web requests to interact with web applications programmatically.</p>
+                    <p>Capture and analyze both local and remote ICMP traffic using Wireshark to understand how packets are transmitted, addressed, and resolved across network layers.</p>
                 </div>
                 <div class="lab-detail">
                     <strong>Tools Used:</strong>
-                    <p>Burp Suite, Browser DevTools, cURL</p>
+                    <p>Wireshark, Command Prompt, TCP/IP utilities (ping, ipconfig)</p>
                 </div>
                 <div class="lab-detail">
                     <strong>Approach:</strong>
                     <p>
-                        Configured browser to proxy traffic through Burp Suite to intercept and modify HTTP requests. 
-                        Analyzed GET and POST requests, examined headers (User-Agent, Cookie, Authorization), and understood 
-                        status codes (200, 404, 500). Practiced modifying request parameters to test different server responses 
-                        and used cURL to send custom HTTP requests from the command line.
+                        Started by retrieving interface addresses using ipconfig /all to identify local network configurations. Initiated Wireshark and selected the active network interface to begin packet capture. Applied filters to isolate ICMP traffic and performed pings to both the local gateway (192.168.100.1) and remote hosts such as www.yahoo.com, www.cisco.com, and www.google.com.
+                        
+                        Analyzed captured packets to compare local versus remote traffic. Observed that local communication displayed both source and destination MAC addresses (e.g., PC-to-router), while remote traffic only displayed the default gateway’s MAC address. Examined how DNS resolved hostnames into IP addresses and how ARP resolved local device MACs before ICMP packets were sent.
                     </p>
                 </div>
                 <div class="lab-detail">
                     <strong>Key Lessons:</strong>
                     <p>
-                        Mastering HTTP concepts is foundational for ethical hacking and penetration testing. Understanding how 
-                        web applications communicate helps identify potential vulnerabilities such as improper input validation, 
-                        session management flaws, and authentication bypasses.
+                        This lab reinforced the difference between local (Layer 2) and remote (Layer 3) communication. When communicating within a LAN, devices use physical MAC addressing, while remote communication relies on the default gateway to forward packets. Learned how Wireshark can visualize packet flow, ARP resolution, and DNS lookups, enhancing network troubleshooting and analysis skills.
                     </p>
                 </div>
+                <!-- Add this at the top of each labchallenges -->
+                    <div class="lab-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h3 style="color: white;">📥 Download Complete Lab Documentation</h3>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            Get the full PDF with detailed methodologies, screenshots, and lessons learned from this lab challenge.
+                        </p>
+                        <a href="assets/documents~/Week 1 Assignment 2_Using Wireshark to View Network Traffic.pdf" class="btn btn-secondary" download style="background: white; color: #667eea;">
+                            Download PDF
+                        </a>
+                    </div>
             </div>
 
             <!-- Lab Challenge 3 -->
             <div class="lab-card">
-                <h3>🧩 Lab 3: Network Scanning & Reconnaissance</h3>
+                <h3>🧩 Lab 3:Build a Switch and Router Network</h3>
                 <div class="lab-detail">
                     <strong>Problem:</strong>
-                    <p>Perform network reconnaissance to discover active hosts, open ports, and running services on a target network.</p>
+                    <p>Design, configure, and verify a basic network consisting of a router, switch, and two end devices using Cisco Packet Tracer. The objective was to establish connectivity between subnets by assigning IP addresses, enabling interfaces, and testing communication using commands like ping, show ip route, and show ip interface brief.</p>
                 </div>
                 <div class="lab-detail">
                     <strong>Tools Used:</strong>
-                    <p>Nmap, Netcat, Ping</p>
+                    <p>Cisco Packet Tracer (Simulation Mode), Cisco IOS Command-Line Interface</p>
                 </div>
                 <div class="lab-detail">
                     <strong>Approach:</strong>
                     <p>
-                        Started with ping sweeps to identify live hosts on the network. Used Nmap for comprehensive port scanning 
-                        with various scan types (SYN scan, TCP connect scan, UDP scan). Performed service version detection to 
-                        identify software running on open ports. Analyzed results to map network topology and potential entry points.
+                        Set up the network topology with a router, switch, and two PCs. Initialized and configured devices by assigning static IPv4 and IPv6 addresses to interfaces. Configured router interfaces (G0/0/0 and G0/0/1) for inter-subnet routing and set up the switch with VLAN interface and default gateway. Verified connectivity by successfully pinging between PCs through the router.
+
+                        Used show commands (show ip route, show ipv6 route, and show interfaces) to confirm interface status, routing entries, and connectivity. Addressed common issues such as “administratively down” interfaces using the no shutdown command and corrected potential misconfigurations like duplicate IP assignments.
                     </p>
                 </div>
                 <div class="lab-detail">
                     <strong>Key Lessons:</strong>
                     <p>
-                        Reconnaissance is the first phase of penetration testing. Proper enumeration reveals the attack surface 
-                        and helps prioritize testing efforts. Learned the importance of stealthy scanning techniques and understanding 
-                        firewall evasion methods. This lab emphasized the defender's perspective of monitoring for scan activities.
+                        This lab provided hands-on experience in network configuration and troubleshooting. It reinforced understanding of static IP addressing, interface configuration, and the relationship between Layer 2 (switching) and Layer 3 (routing). Gained deeper insight into verifying device operations using diagnostic commands and learned how proper IP planning and gateway configuration ensure seamless communication across networks.
                     </p>
                 </div>
+                </div>
+                <!-- Add this at the top of each labchallenges -->
+                    <div class="lab-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h3 style="color: white;">📥 Download Complete Lab Documentation</h3>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            Get the full PDF with detailed methodologies, screenshots, and lessons learned from this lab challenge.
+                        </p>
+                        <a href="assets/documents~/Week 2 Assignment 1_Packet Tracer_Build a Switch and Router Network.pdf" class="btn btn-secondary" download style="background: white; color: #667eea;">
+                            Download PDF
+                        </a>
+                    </div>
             </div>
 
             <!-- Lab Challenge 4 -->
             <div class="lab-card">
-                <h3>🧩 Lab 4: Linux Privilege Escalation</h3>
+                <h3>🧩 Lab 4: Introduction to Network Traffic Analysis</h3>
+                <div class="lab-detail">
+                    <strong>Problem:</strong>
+                    <p>Explore and understand the fundamentals of network traffic analysis through hands-on exercises using tcpdump and Wireshark. The goal was to learn how to capture, filter, and interpret network packets to detect suspicious activities and understand communication between devices across the OSI and TCP/IP layers.</p>
+                </div>
+                <div class="lab-detail">
+                    <strong>Tools Used:</strong>
+                    <p>Wireshark, tcpdump, Linux Command Line, Hack The Box Academy Platform</p>
+                </div>
+                <div class="lab-detail">
+                    <strong>Approach:</strong>
+                    <p>
+                        Accessed the “Introduction to Network Traffic Analysis (Tier 0)” module on Hack The Box Academy. The lab covered both theoretical and practical aspects of analyzing network packets.
+
+                        Initially reviewed the OSI and TCP/IP models to understand how data flows through different layers. Practiced using tcpdump to capture and filter network packets, applying switches such as -i, -v, -X, -r, and -w for various capture scenarios.
+
+                        Then imported packet captures into Wireshark for detailed analysis. Applied display and capture filters to isolate protocols such as HTTP, DNS, ICMP, and SMB. Examined three-way handshakes, DNS resolutions, and HTTP requests to understand how communication occurs between clients and servers.
+
+                        Additionally, explored Wireshark’s advanced features — such as stream following, conversation statistics, and protocol breakdowns — and practiced identifying suspicious activities and reconstructing files from captured traffic.
+                    </p>
+                </div>
+                <div class="lab-detail">
+                    <strong>Key Lessons:</strong>
+                    <p>
+                        This lab provided strong foundational skills in network traffic analysis. Gained practical experience using tcpdump and Wireshark to inspect live and recorded traffic, apply protocol filters, and interpret captured packets. Learned the importance of understanding OSI layers, differentiating between connection-oriented and connectionless protocols, and detecting abnormal network behavior.The exercise also emphasized how traffic analysis supports cybersecurity operations, from identifying vulnerabilities and unauthorized access to performing forensic investigations.
+                    </p>
+                </div>
+                </div>
+                <!-- Add this at the top of each labchallenges -->
+                    <div class="lab-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h3 style="color: white;">📥 Download Complete Lab Documentation</h3>
+                        <p style="color: rgba(255,255,255,0.9);">
+                            Get the full PDF with detailed methodologies, screenshots, and lessons learned from this lab challenge.
+                        </p>
+                        <a href="assets/documents~/Week 2 Assignment 2_Introduction to Network Traffic Analysis.pdf" class="btn btn-secondary" download style="background: white; color: #667eea;">
+                            Download PDF
+                        </a>
+                    </div>
+            </div>
+
+            <!-- Lab Challenge 5 -->
+            <div class="lab-card">
+                <h3>🧩 Lab 5: Linux Privilege Escalation</h3>
                 <div class="lab-detail">
                     <strong>Problem:</strong>
                     <p>Gain root access on a Linux system by exploiting misconfigurations and privilege escalation vectors.</p>
